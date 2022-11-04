@@ -5,14 +5,16 @@ import java.util.List;
 
 public abstract class Vehicle  {
 protected double engineCapacity;
+protected double cost;
 protected String color;
 protected String brandName;
 protected int mileage;
 protected int HP;
 protected String name;
 
-    public Vehicle(String name,double engineCapacity, String color, String brandName, int mileage, int HP) {
+    public Vehicle(String name,double cost,double engineCapacity, String color, String brandName, int mileage, int HP) {
         this.name=name;
+        this.cost=cost;
         this.engineCapacity = engineCapacity;
         this.color = color;
         this.brandName = brandName;
@@ -30,6 +32,10 @@ protected String name;
 
     public int getHP() {
         return HP;
+    }
+
+    public double getCost() {
+        return cost;
     }
 
     public String getName() {

@@ -26,7 +26,8 @@ public class Menu {
             System.out.println("2.Buy car");
             System.out.println("3.See information's about  all cars");
             System.out.println("4.See information's about one car");
-            System.out.println("5.Close");
+            System.out.println("5.See information's about dealer money");
+            System.out.println("6.Close");
             scanner = new Scanner(System.in);
             choose= scanner.nextInt();
             if(choose == 1)
@@ -34,7 +35,8 @@ public class Menu {
                 System.out.println("Input name of the car that you want to sell:");
                 scanner = new Scanner(System.in);
                 carChoose1=scanner.nextLine();
-                Vehicle newCar = new passengerCar(carChoose1,420,"testColor","testBrand",4200,420,false,false,5);
+                //new vehicle with test values
+                Vehicle newCar = new passengerCar(carChoose1,500000,420,"testColor","testBrand",4200,420,false,false,5);
                 dealer.buyCar(newCar); // buy because dealer is buying new car from client
             }
             else if(choose==2)
@@ -58,9 +60,15 @@ public class Menu {
             }
             else if(choose==5)
             {
+                System.out.println("Dealer now have:");
+                System.out.println(dealer.getMoney());
+            }
+            else if(choose==6)
+            {
                 System.out.println("Bye bye");
                 run=false;
             }
+
             else
             {
                 System.out.println("Bad option! Try again!");
